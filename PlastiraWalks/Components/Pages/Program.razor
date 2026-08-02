@@ -1,0 +1,45 @@
+@page "/program"
+@inject WalkService WalkService
+
+<PageTitle>Πρόγραμμα</PageTitle>
+
+<section class="page-hero compact">
+    <h1>Πρόγραμμα Περιπάτων</h1>
+    <p>Εκκίνηση κάθε διαδρομής από Ξενοδοχείο Ναϊάδες, Λίμνη Πλαστήρα.</p>
+</section>
+
+@if (walks is null)
+{
+    <p>Φόρτωση προγράμματος...</p>
+}
+else if (walks.Count == 0)
+{
+    <p>Δεν βρέθηκαν εγγραφές στο walks.json.</p>
+}
+else
+{
+    <ul class="info-list">
+        @foreach (var walk in walks)
+        {
+            <li>
+                <strong>@walk.Day @walk.Date</strong><br />
+                @walk.Title · @walk.Start@((string.IsNullOrWhiteSpace(walk.End) ? string.Empty : $"–{walk.End}")) · Βατός για παιδιά: @(walk.Children ? "Ναι" : "Όχι")<br />
+                <span class="muted">Δυσκολία: @walk.Difficulty · Σημείο εκκίνησης: @walk.Meeting</span>
+            </li>
+        }
+    </ul>
+}
+
+<section class="dashboard-card">
+    <h2>Σταθερό σημείο εκκίνησης</h2>
+    <p><strong>Ξενοδοχείο Ναϊάδες</strong> (είσοδος). Παρακαλείται ενημέρωση υπευθύνου σε κάθε αποχώρηση.</p>
+</section>
+
+@code {
+    private IReadOnlyList<WalkEntry>? walks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        walks = await WalkService.GetWalksAsync();
+    }
+}

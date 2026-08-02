@@ -1,0 +1,41 @@
+@page "/walks"
+@inject WalkService WalkService
+
+<PageTitle>Περίπατοι</PageTitle>
+
+<section class="page-hero compact">
+    <h1>Περίπατοι</h1>
+    <p>Διαδρομές με επίπεδο δυσκολίας, διάρκεια, σημείο συνάντησης και πληροφορίες για παιδιά.</p>
+</section>
+
+@if (walks is null)
+{
+    <p>Φόρτωση περιπάτων...</p>
+}
+else
+{
+    <div class="dashboard-grid">
+        @foreach (var walk in walks)
+        {
+            <article class="dashboard-card">
+                <h2>@walk.Title</h2>
+                <p>@walk.Day @walk.Date · @walk.Start@((string.IsNullOrWhiteSpace(walk.End) ? string.Empty : $"–{walk.End}"))</p>
+                <p>Σημείο συνάντησης: @walk.Meeting</p>
+                <span class="tag">@walk.Difficulty</span>
+                @if (!string.IsNullOrWhiteSpace(walk.Navigation))
+                {
+                    <p class="muted">Πλοήγηση: @walk.Navigation</p>
+                }
+            </article>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyList<WalkEntry>? walks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        walks = await WalkService.GetWalksAsync();
+    }
+}

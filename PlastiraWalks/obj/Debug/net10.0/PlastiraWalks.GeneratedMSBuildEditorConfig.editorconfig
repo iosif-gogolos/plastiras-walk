@@ -30,16 +30,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Emergency.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FbWVyZ2VuY3kucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Helpers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9IZWxwZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Maps.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9NYXBzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ob3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Program.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Qcm9ncmFtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Rules.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9SdWxlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Walks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XYWxrcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/Weather.razor]

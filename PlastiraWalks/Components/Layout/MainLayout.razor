@@ -1,19 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<div class="app-shell">
+    <header class="app-header">
+        <div class="brand-title">Plastira Walks</div>
+        <div class="brand-subtitle">Ομαδικοί Περίπατοι Λίμνης Πλαστήρα</div>
+    </header>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+    <main class="app-main">
+        <article class="content">
             @Body
         </article>
     </main>
+
+    <NavMenu />
 </div>
 
 <div id="blazor-error-ui" data-nosnippet>

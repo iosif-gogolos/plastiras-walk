@@ -13,6 +13,7 @@
     <SourceRoot Include="/Users/iosifgogolos/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.fluentui.aspnetcore.components/4.14.4/buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props" Condition="Exists('$(NuGetPackageRoot)microsoft.fluentui.aspnetcore.components/4.14.4/buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.app.internal.assets/10.0.0/build/Microsoft.AspNetCore.App.Internal.Assets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.app.internal.assets/10.0.0/build/Microsoft.AspNetCore.App.Internal.Assets.props')" />
   </ImportGroup>
 </Project>

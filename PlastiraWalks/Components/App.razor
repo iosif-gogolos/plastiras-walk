@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.FluentUI.AspNetCore.Components
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,14 +11,21 @@
     <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
     <link rel="stylesheet" href="@Assets["app.css"]" />
     <link rel="stylesheet" href="@Assets["PlastiraWalks.styles.css"]" />
+    <link rel="manifest" href="manifest.webmanifest" />
+
+<meta name="theme-color" content="#2E7D32" />
+
+<link rel="apple-touch-icon" href="icons/icon-192.png">
     <ImportMap />
     <link rel="icon" type="image/png" href="favicon.png" />
     <HeadOutlet />
 </head>
 
 <body>
+    <FluentDesignTheme />
     <Routes />
     <ReconnectModal />
+    <script src="@Assets["app.js"]"></script>
     <script src="@Assets["_framework/blazor.web.js"]"></script>
 </body>
 

@@ -1,7 +1,46 @@
 ﻿@page "/"
-
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<section class="conference-hero">
+    <div class="conference-hero-overlay">
+        <h1>17ο Πνευματικό Συνέδριο • Περιπατοι Λίμνης Πλαστήρα</h1>
+        <p>Οργάνωση περιπάτων με ασφαλή εκκίνηση από Ξενοδοχείο Ναϊάδες και mobile-first προβολή για την ομάδα.</p>
+    </div>
 
-Welcome to your new app.
+    <div class="hero-carousel" aria-label="Hero carousel">
+        <article class="hero-slide hero-slide-a">
+            <div class="hero-slide-caption">Ομαδική εκκίνηση • Ξενοδοχείο Ναϊάδες</div>
+        </article>
+        <article class="hero-slide hero-slide-b">
+            <div class="hero-slide-caption">Πρόγραμμα, κανόνες και βοήθεια σε ένα σημείο</div>
+        </article>
+        <article class="hero-slide hero-slide-c">
+            <div class="hero-slide-caption">PWA εγκατάσταση σε iPhone και Android</div>
+        </article>
+    </div>
+
+    <div class="hero-cta-row">
+        <NavLink href="program" class="hero-cta">Δες το πρόγραμμα</NavLink>
+        <NavLink href="helpers" class="hero-cta secondary">Τηλέφωνα βοηθών</NavLink>
+    </div>
+</section>
+
+<section class="dashboard-grid">
+    <article class="dashboard-card">
+        <h2>Σημερινή δράση</h2>
+        <p>Έλεγχος ώρας, διαδρομής και οδηγιών πριν την αναχώρηση.</p>
+        <NavLink href="program" class="card-link">Άνοιγμα προγράμματος</NavLink>
+    </article>
+
+    <article class="dashboard-card">
+        <h2>Σταθερές Περιπάτων</h2>
+        <p>Σημείο εκκίνησης: Ξενοδοχείο Ναϊάδες, νερό, καπέλο, ενημέρωση πριν αποχώρηση.</p>
+        <NavLink href="rules" class="card-link">Προβολή κανόνων</NavLink>
+    </article>
+
+    <article class="dashboard-card danger">
+        <h2>Έκτακτη ανάγκη</h2>
+        <p>Άμεση πρόσβαση σε κρίσιμα τηλέφωνα και οδηγίες ασφάλειας.</p>
+        <NavLink href="emergency" class="card-link">Άνοιγμα SOS</NavLink>
+    </article>
+</section>
