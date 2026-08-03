@@ -1,4 +1,4 @@
-/* filepath: /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Layout/MainLayout.razor.css */
+
 .app-shell[b-ljru2bsukc] {
     min-height: 100dvh;
     background: linear-gradient(180deg, #f4f8ff 0%, #edf3ff 100%);
@@ -13,7 +13,7 @@
     padding: 0.9rem 1rem 0.8rem;
     border-bottom: 1px solid rgba(7, 35, 83, 0.12);
     background: linear-gradient(135deg, #0f6cbd 0%, #0a3f7f 100%);
-    color: #ffffff;
+    color: #fff;
     box-shadow: 0 6px 24px rgba(11, 52, 109, 0.2);
 }
 
@@ -21,20 +21,19 @@
 .brand-title[b-ljru2bsukc] {
     font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: .02em;
     line-height: 1.25;
 }
 
 .brand-subtitle[b-ljru2bsukc] {
-    font-size: 0.78rem;
-    opacity: 0.9;
-    margin-top: 0.2rem;
+    font-size: .78rem;
+    opacity: .9;
+    margin-top: .2rem;
 }
 
-/* Main layout area */
+/* Main layout */
 .app-main[b-ljru2bsukc] {
-    padding: 0.9rem 0.9rem calc(4.6rem + env(safe-area-inset-bottom));
-    /* reduce bottom padding slightly; mobile nav height ~56–64px */
+    padding: .9rem .9rem calc(6.5rem + env(safe-area-inset-bottom));
 }
 
 .content[b-ljru2bsukc] {
@@ -42,40 +41,30 @@
     margin: 0 auto;
 }
 
-/* Side rail (desktop) / hidden above mobile */
+/* Mobile / tablet navigation bar */
 .app-rail[b-ljru2bsukc] {
-    display: none;
-}
-
-/* bottom nav default (mobile) remains fixed-bottom — rules in NavMenu.razor.css target .bottom-nav */
-.bottom-nav[b-ljru2bsukc] {
+    display: block;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 80;
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 0.15rem;
-    padding: 0.35rem 0.35rem calc(0.45rem + env(safe-area-inset-bottom));
-    background: rgba(255, 255, 255, 0.96);
-    border-top: 1px solid rgba(10, 63, 127, 0.16);
-    backdrop-filter: saturate(1.2) blur(12px);
+    z-index: 2000;
 }
 
-/* Carousel constraints to avoid expanding the page height */
-.hero-carousel[b-ljru2bsukc], .photo-carousel[b-ljru2bsukc] {
+/* Carousel */
+.hero-carousel[b-ljru2bsukc],
+.photo-carousel[b-ljru2bsukc] {
     max-height: 260px;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-/* each slide fixed height so page doesn't grow */
-.hero-slide[b-ljru2bsukc], .photo-slide img[b-ljru2bsukc] {
+.hero-slide[b-ljru2bsukc],
+.photo-slide img[b-ljru2bsukc] {
     height: 220px;
 }
 
-/* Desktop layout: make grid with rail + content */
+
 @media (min-width: 900px) {
     .app-shell[b-ljru2bsukc] {
         display: grid;
@@ -88,11 +77,15 @@
     }
 
     .app-rail[b-ljru2bsukc] {
-        display: block;
+        position: sticky;
+        top: 4.4rem;
+        bottom: auto;
+        left: auto;
+        right: auto;
         grid-row: 2;
         grid-column: 1;
         padding: 1rem;
-        position: relative;
+        align-self: start;
     }
 
     .app-main[b-ljru2bsukc] {
@@ -104,61 +97,26 @@
     .content[b-ljru2bsukc] {
         margin: 0;
     }
-
-    /* Place the existing NavMenu's bottom-nav into the rail: make it static vertical */
-    .bottom-nav[b-ljru2bsukc] {
-        position: static;
-        top: auto;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        display: block;
-        grid-template-columns: 1fr;
-        gap: 0.4rem;
-        padding: 0;
-        margin: 0;
-        background: transparent;
-        border: none;
-        backdrop-filter: none;
-    }
-
-    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.65rem 0.6rem;
-        color: #123c64;
-        border-radius: 0.55rem;
-    }
-
-    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item .label {
-        font-size: 0.95rem;
-    }
-
-    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item.active {
-        background: rgba(15,108,189,0.07);
-        color: var(--conf-blue);
-    }
 }
 
-/* Error UI small tweaks */
+
 #blazor-error-ui[b-ljru2bsukc] {
     color-scheme: light only;
     background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+    bottom:0;
+    box-shadow:0 -1px 2px rgba(0,0,0,.2);
+    box-sizing:border-box;
+    display:none;
+    left:0;
+    padding:.6rem 1.25rem .7rem;
+    position:fixed;
+    width:100%;
+    z-index:1000;
 }
 
-#blazor-error-ui .dismiss[b-ljru2bsukc] {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
+#blazor-error-ui .dismiss[b-ljru2bsukc]{
+    cursor:pointer;
+    position:absolute;
+    right:.75rem;
+    top:.5rem;
 }

@@ -1191,10 +1191,10 @@
 /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/1r55bbrgc8-{0}-mbrecwt445-mbrecwt445.gz
 /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/i2ffw6fp4u-{0}-sbucy1ccw5-sbucy1ccw5.gz
 /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/gjejohlygw-{0}-icbqds9w3v-icbqds9w3v.gz
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.2xurplo9gv.wasm
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.9zs6uy6fiq.pdb
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.2xurplo9gv.wasm.gz
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.9zs6uy6fiq.pdb.gz
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/azzxovwx8q-{0}-2xurplo9gv-2xurplo9gv.gz
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/zslxkn12nm-{0}-9zs6uy6fiq-9zs6uy6fiq.gz
-/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/n4cbhd7n01-{0}-cct6ogz51v-cct6ogz51v.gz
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.j46g3osxq1.wasm
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.lxl3oobbzo.pdb
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.j46g3osxq1.wasm.gz
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/bin/Debug/net10.0/wwwroot/_framework/PlastiraWalks.lxl3oobbzo.pdb.gz
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/azzxovwx8q-{0}-j46g3osxq1-j46g3osxq1.gz
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/zslxkn12nm-{0}-lxl3oobbzo-lxl3oobbzo.gz
+/Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/obj/Debug/net10.0/compressed/n4cbhd7n01-{0}-w4zwazwse9-w4zwazwse9.gz

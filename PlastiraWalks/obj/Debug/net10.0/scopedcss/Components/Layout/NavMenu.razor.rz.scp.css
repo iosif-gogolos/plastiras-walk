@@ -2,15 +2,28 @@
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 80;
+    bottom: calc(env(safe-area-inset-bottom) + 0.25rem);
+    z-index: 9999;
+
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 0.15rem;
-    padding: 0.35rem 0.35rem calc(0.45rem + env(safe-area-inset-bottom));
-    background: rgba(255, 255, 255, 0.96);
-    border-top: 1px solid rgba(10, 63, 127, 0.16);
-    backdrop-filter: saturate(1.2) blur(12px);
+    grid-template-columns: repeat(7, minmax(0,1fr));
+
+    gap: .15rem;
+
+    padding:
+        .35rem
+        .35rem
+        calc(.45rem + env(safe-area-inset-bottom));
+
+    background: rgba(255,255,255,.97);
+
+    border-top: 1px solid rgba(10,63,127,.15);
+
+    box-shadow: 0 -6px 18px rgba(0,0,0,.12);
+
+    backdrop-filter: blur(12px);
+
+    width:100%;
 }
 
 .bottom-nav[b-vuhe5vkyc2]  .bottom-nav-item {
