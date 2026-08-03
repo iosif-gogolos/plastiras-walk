@@ -1,9 +1,10 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
 
 <div class="app-shell">
     <header class="app-header" role="banner">
         <div class="brand">
-            <div class="brand-title">17ο Πνευματικό Συνέδριο </div>
+            <div class="brand-title">17ο Πνευματικό Συνέδριο</div>
             <div class="brand-subtitle">Ομαδικοί Περίπατοι Λίμνης Πλαστήρα</div>
         </div>
     </header>
@@ -17,6 +18,21 @@
             @Body
         </article>
     </main>
+
+    @if (_updateAvailable)
+    {
+        <div class="update-toast" role="status" aria-live="polite">
+            <div class="update-toast-body">
+                <div class="update-toast-title">Update available</div>
+                <div class="update-toast-text">A newer version is ready. Update now to load the latest changes.</div>
+            </div>
+
+            <div class="update-toast-actions">
+                <FluentButton Appearance="Appearance.Accent" @onclick="UpdateAsync">Update</FluentButton>
+                <FluentButton Appearance="Appearance.Outline" @onclick="LaterAsync">Later</FluentButton>
+            </div>
+        </div>
+    }
 </div>
 
 <div id="blazor-error-ui" data-nosnippet>
@@ -24,3 +40,55 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+@code {
+    private IJSObjectReference? _updateModule;
+    private DotNetObjectReference<MainLayout>? _dotNetRef;
+    private bool _updateAvailable;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        _dotNetRef = DotNetObjectReference.Create(this);
+        _updateModule = await JS.InvokeAsync<IJSObjectReference>("import", "/update.js");
+        await _updateModule.InvokeVoidAsync("initializeUpdateDetection", _dotNetRef);
+    }
+
+    [JSInvokable]
+    public Task ShowUpdateToast()
+    {
+        _updateAvailable = true;
+        return InvokeAsync(StateHasChanged);
+    }
+
+    private async Task UpdateAsync()
+    {
+        _updateAvailable = false;
+        await InvokeAsync(StateHasChanged);
+
+        if (_updateModule is not null)
+        {
+            await _updateModule.InvokeVoidAsync("activateUpdate");
+        }
+    }
+
+    private Task LaterAsync()
+    {
+        _updateAvailable = false;
+        return InvokeAsync(StateHasChanged);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _dotNetRef?.Dispose();
+
+        if (_updateModule is not null)
+        {
+            await _updateModule.DisposeAsync();
+        }
+    }
+}

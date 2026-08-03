@@ -1,0 +1,22 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/app.css",
+      "/app.js",
+      "/update.js",
+      "/manifest.webmanifest",
+      "/service-worker.js",
+      "/icons/*",
+      "/images/*",
+      "/data/*",
+      "/*.css",
+      "/*.js",
+      "/*.png",
+      "/*.jpg",
+      "/*.jpeg",
+      "/*.svg",
+      "/*.webmanifest"
+    ]
+  }
+}

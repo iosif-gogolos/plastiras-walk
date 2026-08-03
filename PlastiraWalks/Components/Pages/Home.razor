@@ -7,22 +7,12 @@
         <p>Οργάνωση περιπάτων με ασφαλή εκκίνηση από Ξενοδοχείο Ναϊάδες και mobile-first προβολή για την ομάδα.</p>
     </div>
 
-    <div class="hero-carousel" aria-label="Hero carousel">
-        <article class="hero-slide hero-slide-a">
-            <div class="hero-slide-caption">Ομαδική εκκίνηση • Ξενοδοχείο Ναϊάδες</div>
-        </article>
-        <article class="hero-slide hero-slide-b">
-            <div class="hero-slide-caption">Πρόγραμμα, κανόνες και βοήθεια σε ένα σημείο</div>
-        </article>
-        <article class="hero-slide hero-slide-c">
-            <div class="hero-slide-caption">PWA εγκατάσταση σε iPhone και Android</div>
-        </article>
-    </div>
+    <ImageCarousel Images="featuredImages" BasePath="images/walks" AutoPlayInterval="3500" />
+</section>
 
-    <div class="hero-cta-row">
-        <NavLink href="program" class="hero-cta">Δες το πρόγραμμα</NavLink>
-        <NavLink href="helpers" class="hero-cta secondary">Τηλέφωνα βοηθών</NavLink>
-    </div>
+<section class="hero-cta-row">
+    <NavLink href="program" class="hero-cta">Δες το πρόγραμμα</NavLink>
+    <NavLink href="helpers" class="hero-cta secondary">Τηλέφωνα βοηθών</NavLink>
 </section>
 
 <section class="dashboard-grid">
@@ -44,3 +34,7 @@
         <NavLink href="emergency" class="card-link">Άνοιγμα SOS</NavLink>
     </article>
 </section>
+
+@code {
+    private readonly List<string> featuredImages = ["day1-1.jpg", "day2-1.jpg", "day3-1.jpg"];
+}
