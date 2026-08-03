@@ -283,6 +283,10 @@ h1:focus {
     background: rgba(255, 247, 247, 1);
 }
 
+#blazor-error-ui {
+    display: none;
+}
+
 @media (min-width: 720px) {
     .dashboard-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
