@@ -1,13 +1,75 @@
 @page "/maps"
+@inject WalkService WalkService
 
 <PageTitle>Χάρτες</PageTitle>
 
 <section class="page-hero compact">
     <h1>Χάρτες</h1>
-    <p>Θα προστεθούν σύνδεσμοι πλοήγησης και offline χάρτες για τις διαδρομές.</p>
+    <p>Επιλέξτε ημέρα για GPX διαδρομή και φωτογραφίες.</p>
 </section>
 
-<section class="dashboard-card">
-    <h2>Επόμενη φάση</h2>
-    <p>Ενσωμάτωση σημείων συνάντησης, GPX links και fallback οδηγίες χωρίς σήμα.</p>
-</section>
+@if (walks is null)
+{
+    <p>Φόρτωση...</p>
+}
+else if (walks.Count == 0)
+{
+    <p>Δεν υπάρχουν διαθέσιμοι περίπατοι.</p>
+}
+else
+{
+    <section class="dashboard-card">
+        <label for="daySelect"><strong>Ημέρα:</strong></label>
+        <select id="daySelect" @bind="selectedDay" @bind:after="OnDayChanged">
+            @foreach (var walk in walks)
+            {
+                <option value="@walk.Day">@($"Ημέρα {walk.Day} · {walk.Title}")</option>
+            }
+        </select>
+    </section>
+
+    @if (SelectedWalk is not null)
+    {
+        <section class="dashboard-card">
+            <h2>@SelectedWalk.Title</h2>
+            <p>@SelectedWalk.Day @SelectedWalk.Date · @SelectedWalk.Start@((string.IsNullOrWhiteSpace(SelectedWalk.End) ? string.Empty : $"–{SelectedWalk.End}"))</p>
+
+            @if (!string.IsNullOrWhiteSpace(SelectedWalk.GpxFile))
+            {
+                <p>
+                    <a class="tag" href="data/gpx/@SelectedWalk.GpxFile" download>
+                        Λήψη GPX
+                    </a>
+                </p>
+            }
+            else
+            {
+                <p class="muted">Δεν υπάρχει διαθέσιμο GPX για αυτή τη διαδρομή.</p>
+            }
+        </section>
+
+        @if (SelectedWalk.Images.Count > 0)
+        {
+            <ImageCarousel Images="SelectedWalk.Images" BasePath="images/walks" />
+        }
+    }
+}
+
+@code {
+    private IReadOnlyList<WalkEntry>? walks;
+    private string? selectedDay;
+
+    private WalkEntry? SelectedWalk =>
+        walks?.FirstOrDefault(w => w.Day == selectedDay);
+
+    protected override async Task OnInitializedAsync()
+    {
+        walks = await WalkService.GetWalksAsync();
+        selectedDay = walks.FirstOrDefault()?.Day;
+    }
+
+    private void OnDayChanged()
+    {
+        // Triggers re-render; SelectedWalk recomputes from selectedDay.
+    }
+}

@@ -23,4 +23,8 @@ public sealed class WalkEntry
     public string Notes { get; set; } = string.Empty;
 
     public string Transport { get; set; } = string.Empty;
+
+    public string? GpxFile { get; set; }
+
+    public List<string> Images { get; set; } = [];
 }

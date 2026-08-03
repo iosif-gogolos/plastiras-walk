@@ -1,12 +1,14 @@
 @import '_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lcdo7z9xd2.bundle.scp.css';
 
 /* /Components/Layout/MainLayout.razor.rz.scp.css */
+/* filepath: /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Layout/MainLayout.razor.css */
 .app-shell[b-ljru2bsukc] {
     min-height: 100dvh;
     background: linear-gradient(180deg, #f4f8ff 0%, #edf3ff 100%);
     color: #10213d;
 }
 
+/* Header */
 .app-header[b-ljru2bsukc] {
     position: sticky;
     top: 0;
@@ -18,6 +20,7 @@
     box-shadow: 0 6px 24px rgba(11, 52, 109, 0.2);
 }
 
+/* Brand */
 .brand-title[b-ljru2bsukc] {
     font-size: 1.05rem;
     font-weight: 700;
@@ -31,8 +34,10 @@
     margin-top: 0.2rem;
 }
 
+/* Main layout area */
 .app-main[b-ljru2bsukc] {
-    padding: 0.9rem 0.9rem 6rem;
+    padding: 0.9rem 0.9rem calc(4.6rem + env(safe-area-inset-bottom));
+    /* reduce bottom padding slightly; mobile nav height ~56–64px */
 }
 
 .content[b-ljru2bsukc] {
@@ -40,10 +45,44 @@
     margin: 0 auto;
 }
 
+/* Side rail (desktop) / hidden above mobile */
+.app-rail[b-ljru2bsukc] {
+    display: none;
+}
+
+/* bottom nav default (mobile) remains fixed-bottom — rules in NavMenu.razor.css target .bottom-nav */
+.bottom-nav[b-ljru2bsukc] {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.15rem;
+    padding: 0.35rem 0.35rem calc(0.45rem + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid rgba(10, 63, 127, 0.16);
+    backdrop-filter: saturate(1.2) blur(12px);
+}
+
+/* Carousel constraints to avoid expanding the page height */
+.hero-carousel[b-ljru2bsukc], .photo-carousel[b-ljru2bsukc] {
+    max-height: 260px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* each slide fixed height so page doesn't grow */
+.hero-slide[b-ljru2bsukc], .photo-slide img[b-ljru2bsukc] {
+    height: 220px;
+}
+
+/* Desktop layout: make grid with rail + content */
 @media (min-width: 900px) {
     .app-shell[b-ljru2bsukc] {
         display: grid;
-        grid-template-columns: 280px minmax(0, 1fr);
+        grid-template-columns: 260px minmax(0, 1fr);
         grid-template-rows: auto 1fr;
     }
 
@@ -51,7 +90,16 @@
         grid-column: 1 / span 2;
     }
 
+    .app-rail[b-ljru2bsukc] {
+        display: block;
+        grid-row: 2;
+        grid-column: 1;
+        padding: 1rem;
+        position: relative;
+    }
+
     .app-main[b-ljru2bsukc] {
+        grid-row: 2;
         grid-column: 2;
         padding: 1.4rem 2rem 2rem;
     }
@@ -59,8 +107,44 @@
     .content[b-ljru2bsukc] {
         margin: 0;
     }
+
+    /* Place the existing NavMenu's bottom-nav into the rail: make it static vertical */
+    .bottom-nav[b-ljru2bsukc] {
+        position: static;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        display: block;
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        backdrop-filter: none;
+    }
+
+    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.65rem 0.6rem;
+        color: #123c64;
+        border-radius: 0.55rem;
+    }
+
+    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item .label {
+        font-size: 0.95rem;
+    }
+
+    .bottom-nav[b-ljru2bsukc]  .bottom-nav-item.active {
+        background: rgba(15,108,189,0.07);
+        color: var(--conf-blue);
+    }
 }
 
+/* Error UI small tweaks */
 #blazor-error-ui[b-ljru2bsukc] {
     color-scheme: light only;
     background: lightyellow;
@@ -75,12 +159,12 @@
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss[b-ljru2bsukc] {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss[b-ljru2bsukc] {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
 .bottom-nav[b-vuhe5vkyc2] {
     position: fixed;

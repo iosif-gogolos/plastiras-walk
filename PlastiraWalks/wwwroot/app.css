@@ -85,6 +85,38 @@
     padding: 0.35rem 0.5rem;
 }
 
+.photo-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.3rem;
+    margin-top: 0.75rem;
+}
+
+.photo-slide {
+    scroll-snap-align: start;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    border: 1px solid rgba(15, 108, 189, 0.15);
+    box-shadow: 0 6px 20px rgba(12, 53, 108, 0.08);
+}
+
+.photo-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 720px) {
+    .photo-carousel {
+        grid-auto-columns: minmax(0, 45%);
+    }
+}
+
 .muted {
     color: #5c6f8f;
     font-size: 0.82rem;

@@ -1,18 +1,22 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="app-shell">
-    <header class="app-header">
-        <div class="brand-title">Plastira Walks</div>
-        <div class="brand-subtitle">Ομαδικοί Περίπατοι Λίμνης Πλαστήρα</div>
+    <header class="app-header" role="banner">
+        <div class="brand">
+            <div class="brand-title">17ο Πνευματικό Συνέδριο </div>
+            <div class="brand-subtitle">Ομαδικοί Περίπατοι Λίμνης Πλαστήρα</div>
+        </div>
     </header>
 
-    <main class="app-main">
+    <aside class="app-rail" role="navigation" aria-label="Πλευρική πλοήγηση">
+        <NavMenu />
+    </aside>
+
+    <main class="app-main" role="main">
         <article class="content">
             @Body
         </article>
     </main>
-
-    <NavMenu />
 </div>
 
 <div id="blazor-error-ui" data-nosnippet>

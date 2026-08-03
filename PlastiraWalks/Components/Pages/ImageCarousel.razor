@@ -1,0 +1,45 @@
+// filepath: /Users/iosifgogolos/Plastira2026/PlastiraWalks/PlastiraWalks/Components/Pages/ImageCarousel.razor
+@if (Images is { Count: > 0 })
+{
+    <div id="@CarouselId" class="photo-carousel" role="list">
+        @foreach (var image in Images)
+        {
+            <div class="photo-slide" role="listitem">
+                <img src="@GetSrc(image)" alt="@Alt" loading="lazy" />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public List<string> Images { get; set; } = new List<string>();
+    [Parameter] public string BasePath { get; set; } = "/images/walks";
+    [Parameter] public string Alt { get; set; } = "Φωτογραφία περιπάτου";
+    [Parameter] public int AutoPlayInterval { get; set; } = 4000;
+
+    [Inject] private IJSRuntime Js { get; set; } = default!;
+
+    private readonly string CarouselId = $"carousel-{Guid.NewGuid():N}";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && AutoPlayInterval > 0)
+        {
+            try
+            {
+                await Js.InvokeVoidAsync("startCarousel", CarouselId, AutoPlayInterval);
+            }
+            catch
+            {
+                // graceful fallback if JS not available
+            }
+        }
+    }
+
+    private string GetSrc(string image)
+    {
+        var basePath = string.IsNullOrWhiteSpace(BasePath) ? "/images/walks" : BasePath;
+        if (!basePath.StartsWith("/")) basePath = "/" + basePath.TrimStart('/');
+        return $"{basePath.TrimEnd('/')}/{image}";
+    }
+}
