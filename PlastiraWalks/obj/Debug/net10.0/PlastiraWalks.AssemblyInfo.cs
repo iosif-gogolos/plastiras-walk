@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlastiraWalks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd1d5f1e9646681a4918fcc2000cf6c43f3e90fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3db587350f4b82bc92fe14151112be4885593af9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlastiraWalks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlastiraWalks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

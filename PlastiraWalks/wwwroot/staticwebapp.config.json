@@ -2,21 +2,30 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
-      "/app.css",
-      "/app.js",
-      "/update.js",
-      "/manifest.webmanifest",
-      "/service-worker.js",
-      "/icons/*",
       "/images/*",
+      "/icons/*",
       "/data/*",
-      "/*.css",
-      "/*.js",
-      "/*.png",
-      "/*.jpg",
-      "/*.jpeg",
-      "/*.svg",
-      "/*.webmanifest"
+      "/_framework/*"
     ]
-  }
+  },
+  "routes": [
+    {
+      "route": "/index.html",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    },
+    {
+      "route": "/service-worker.js",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    },
+    {
+      "route": "/update.js",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    }
+  ]
 }
