@@ -299,7 +299,7 @@ h1:focus {
 .page-hero {
     background: linear-gradient(145deg, #0f6cbd 0%, #1552a3 100%);
     color: #ffffff;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     box-shadow: 0 12px 28px rgba(16, 63, 124, 0.2);
     margin-bottom: 0.95rem;
@@ -334,7 +334,7 @@ h1:focus {
 .dashboard-card {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(15, 108, 189, 0.15);
-    border-radius: 0.9rem;
+    border-radius: 0.5rem;
     padding: 0.9rem;
     box-shadow: 0 6px 20px rgba(12, 53, 108, 0.08);
 }
@@ -389,7 +389,7 @@ h1:focus {
 .info-list li {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(15, 108, 189, 0.12);
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     padding: 0.75rem 0.85rem;
     font-size: 0.9rem;
     color: #253c5f;

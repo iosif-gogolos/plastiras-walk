@@ -12,7 +12,7 @@
     "notes": "Καπέλο και νερό",
     "transport": "Με τα πόδια",
     "gpxFile": null,
-    "images": [ "day1-1.jpg", "day1-2.jpg", "day1-3.jpg" ]
+    "images": [ "forest-1.jpg", "forest-2.jpg", "forest-3.jpg" ]
   },
   {
     "day": "Τετάρτη",
@@ -20,17 +20,32 @@
     "title": "Ορεινό Καταφύγιο Αγράφων",
     "start": "12:00",
     "end": "15:00",
-    "difficulty": "Moderate",
-    "children": true,
+    "difficulty": "Hard",
+    "children": false,
     "meeting": "Ξενοδοχείο Ναϊάδες, Λίμνη Πλαστήρα",
     "navigation": "Parking καταφυγίου, δασικό μονοπάτι",
     "notes": "Κλειστά παπούτσια, καπέλο, αρκετό νερό",
     "transport": "ΙΧ",
     "gpxFile": null,
-    "images": [ "day2-1.jpg", "day2-2.jpg", "day2-3.jpg" ]
+    "images": [ "agrafa-1.jpg", "agrafa-2.jpg", "agrafa-3.jpg" ]
   },
   {
-    "day": "Πέμπτη",
+    "day": "Πέμπτη πρωί",
+    "date": "2026-08-06",
+    "title": "Πρωϊνός περίπατος κάτω στη λίμνη",
+    "start": "6:15",
+    "end": "07:30",
+    "difficulty": "Easy",
+    "children": true,
+    "meeting": "Ξενοδοχείο Ναϊάδες, Λίμνη Πλαστήρα",
+    "navigation": "Προς βοτανικό κήπο, (~1.6 χμ απο το ξενοδοχείο Ναϊάδες).",
+    "notes": "Μικρό περπάτημα, κατάλληλο για φωτογραφίες",
+    "transport": "ΙΧ",
+    "gpxFile": null,
+    "images": [ "limni-1.jpg", "limni-2.jpg", "limni-3.jpg" ]
+  },
+  {
+    "day": "Πέμπτη απόγευμα",
     "date": "2026-08-06",
     "title": "Βόλτα στο Παρατηρητήριο",
     "start": "12:15",
@@ -38,10 +53,10 @@
     "difficulty": "Easy",
     "children": true,
     "meeting": "Ξενοδοχείο Ναϊάδες, Λίμνη Πλαστήρα",
-    "navigation": "Μπελοκομίτη, χωματόδρομος, σήμανση",
+    "navigation": "Μπελοκομίτη, χωματόδρομος, σήμανση. Επειδή ο χωματόδρομος είναι αρκετα δύσκολος για χαμηλά οχήματα, παρακαλουνται όσοι συμμετέχουν να ερθουν με 4x4 ή να παρκάρουν λίγο ποιο κατω και να ανεβουν με τα ποδια στο παρατηρητηριο (~1 χμ).",
     "notes": "Μικρό περπάτημα, κατάλληλο για φωτογραφίες",
     "transport": "ΙΧ",
     "gpxFile": null,
-    "images": [ "day3-1.jpg", "day3-2.jpg", "day3-3.jpg" ]
+    "images": [ "platform-1.jpg", "platform-2.jpg", "platform-3.jpg" ]
   }
 ]
