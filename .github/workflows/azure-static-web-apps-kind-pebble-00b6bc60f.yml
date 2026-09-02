@@ -49,11 +49,11 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_PEBBLE_00B6BC60F }}
           action: "upload"
-          app_location: "release/wwwroot" # Path to compiled static output
+          app_location: "/"
           api_location: ""
-          output_location: ""
-          skip_app_build: true # Prevents Oryx from overriding compiled files
-          github_id_token: ${{ steps.idtoken.outputs.result }} # Retains OIDC auth
+          app_artifact_location: "release/wwwroot"
+          skip_app_build: true
+          github_id_token: ${{ steps.idtoken.outputs.result }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
